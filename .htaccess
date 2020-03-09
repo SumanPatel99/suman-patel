@@ -1,0 +1,14 @@
+
+#----HTTP to HTTPS Redirection-----
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+ErrorDocument 404 https://blocklogy.org/Error404.html
+
+<FilesMatch "(?i)^.*\.(ico|flv|jpg|jpeg|png|gif|js|css|woff)$">
+ExpiresActive On
+ExpiresDefault A172800
+</FilesMatch>
+</IfModule>
+#---------------------------------------------------

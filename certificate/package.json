@@ -1,0 +1,17 @@
+{
+  "name": "blocklogy_certificate_generate",
+  "version": "1.0.0",
+  "description": "Blocklogy certificate generation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jetso",
+  "license": "ISC",
+  "dependencies": {
+    "ethers": "^4.0.33"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0"
+  }
+}

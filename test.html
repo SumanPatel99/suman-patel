@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.hint { display: none; }
+		.field:hover .hint { display: block; }
+	</style>
+</head>
+<body>
+<div class="field">
+    <label for="name">Name:</label>
+    <input type="text" class="input" name="name" />
+    <p class="hint">Enter your name</p>
+</div>
+
+<script type="text/javascript">
+	jQuery(".field").hover(
+   function() {
+      jQuery(this).find(".hint").css("display","block");
+   },
+   function() {
+      jQuery(this).find(".hint").css("display","none");
+   }
+);
+</script>
+</body>
+</html>

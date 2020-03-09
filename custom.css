@@ -1,0 +1,9 @@
+.dropdown-toggle::after{
+	display: none;
+	
+}
+
+.cons{
+	width:25px;
+	padding-right: 5px;
+}

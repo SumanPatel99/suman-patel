@@ -1,0 +1,114 @@
+
+<html class="no-js" lang="">
+  <head>
+   <script charset="utf-8" src="qrcode.js" type="text/javascript"></script>
+  <script type="text/javascript" src="web3/web3.min.js"></script>
+  <script type="text/javascript" src="wallet.js"></script>
+
+<script type="text/javascript">  if(typeof window.web3 !== "undefined" && typeof window.web3.currentProvider !== "undefined") {
+     var web3 = new Web3(window.web3.currentProvider);
+   } else {
+     var web3 = new Web3();
+   }
+</script>
+<script charset="utf-8"
+src="https://cdn.ethers.io/scripts/ethers-v4.min.js" type="text/javascript">
+</script> 
+<!-- <script src="node_modules/abi-decoder/test/test.js"></script> -->
+      
+      <script charset="utf-8" src="setvalue.js" type="text/javascript"></script>
+      <script charset="utf-8" src="output.js" type="text/javascript"></script>
+
+
+<link rel="stylesheet" href="style.css">
+
+
+<script>
+
+function getUrlVars() {
+  var url = new URL(window.location.href);
+  var uid = url.searchParams.get("_uid");
+  var cid = url.searchParams.get("_cid");
+  var name = url.searchParams.get("_name");
+  var course = url.searchParams.get("_course");
+  var belt = url.searchParams.get("_belt");
+  var beltno = url.searchParams.get("_bno");
+  var percentile = url.searchParams.get("_percentile");
+  var hash = url.searchParams.get("_hash");
+
+
+
+  // document.getElementById("_uid").value = uid;
+  document.getElementById("_cid").value = cid;
+  // document.getElementById("_name").value = name;
+  // document.getElementById("_course").value = course;
+  // document.getElementById("_percentile").value = percentile;
+  document.getElementById("_hash").value = hash;
+  document.getElementById("_belt").value = belt;
+
+  document.querySelector("#ethBtn").setAttribute('href', 'https://rinkeby.etherscan.io/tx/' + hash);
+
+  // console.log(uid,name,course,percentile);
+
+}
+
+
+
+  </script>
+
+
+
+    
+  </head>
+  <body onload="getUrlVars()">
+     
+
+
+
+
+<div class="slideshow">
+<div class="huge" >
+    <div class="golding">
+        <div class="aslide" id="grad" style="text-align:center;" >
+        <img src="Blocklogy Logo with R_PNG.png" alt="logo" height="20" width="10" size="50%">
+        </div>
+    </div>
+</div>
+</div>
+<h1 style="text-align: center;">Verify Certificate in Blockchain</h1>
+<!-- <p style="text-align:center;"> </p> -->
+<!-- <div class="card transition">
+    <h2 class="transition">Blockchain Certificate</h2>
+    <p>Blocklogy Certificate verification in Ethereum Blockchain (Place your mouse here to view and verify your details)</p> -->
+
+    <div id="form" style="width: 30%; position: absolute;" align="center">
+    <form id="verify" action="./output.js">
+          <label>Certificate ID</label>
+          <input placeholder="Enter The Certificate ID from your Certificate or scan the QR" type="text" id="_cid" name="cid">
+          <label>User UID</label>
+          <input placeholder="User UID" type="text" id="_uid" name="uid" readonly>
+          <label>Candidate Name</label>
+          <input placeholder="Candidate Name" type="text" id="_name" name="name"  readonly>
+          <label>Course Name</label>
+          <input placeholder="Course Name" type="text" id="_course" name="course" readonly>
+          <label>Belt</label>
+          <input placeholder="Belt Will be displayed once you scan the QR code" type="text" id="_belt" name="belt" readonly>
+          <label>Percentile</label>
+          <input placeholder="Percentage" type="text" id="_percentile" name="percentile" readonly>
+      
+          <a href="#" onclick="output()" class="cta">Load Details</a> <br>
+          <label>Or Confirm with TX hash</label>
+          <input placeholder="Scan QR to view Transactoin hash or go to Etherscan to verify manually" type="text" id="_hash" name="hash" readonly>
+          
+          <a target="_blank" class="cta" id="ethBtn">Etherscan</a>
+         </form>
+        
+    
+    </div>
+    <!-- <div class="card_circle transition"></div> -->
+  <!-- </div> -->
+  
+  <script src="setvalue.js"></script>
+  <script src="output.js"></script> 
+</body>
+</html>
